@@ -11,6 +11,6 @@ export default function Text({
 const styles = StyleSheet.create({
   text: {
     fontSize: 24,
-    color: 'white'
+    color: "white"
   }
 })

@@ -17,7 +17,7 @@ export default function Index() {
 
       <Form setTasks={setTasks} />
 
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} setTasks={setTasks}/>
 
       <StatusBar style="auto" />
     </Container>
