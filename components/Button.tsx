@@ -1,6 +1,5 @@
 import { PropsWithChildren } from "react";
 import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function Button({
   children,

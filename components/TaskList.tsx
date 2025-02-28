@@ -2,6 +2,7 @@ import { FlatList, StyleSheet, View } from "react-native";
 import Text from "./Text";
 import { Task } from "@/types";
 import Button from "./Button";
+import { AntDesign } from "@expo/vector-icons";
 
 export default function TaskList({
   tasks,
@@ -15,9 +16,8 @@ export default function TaskList({
       style={styles.listContainer}
       data={tasks}
       renderItem={(task) => {
-        const itemStyle = task.item.done ? [styles.listItem, styles.listItemDone] : styles.listItem;
         return (
-          <View style={itemStyle}>
+          <View style={styles.listItem}>
             <View>
               <Text>{task.item.title}</Text>
               <Text>{task.item.subtitle}</Text>
@@ -25,10 +25,18 @@ export default function TaskList({
 
             {!task.item.done &&
               <Button
-                onPress={() => setTasks((tasks) => [...tasks.filter((taskFilter) => taskFilter.id !== task.item.id), {...task.item, done: true}])}
+                onPress={() => setTasks((tasks) => tasks.map(taskMap => {
+                  if (taskMap.id !== task.item.id) return taskMap;
+                  else taskMap.done = true;
+                  return taskMap;
+                }))}
               >
                 Check
               </Button>
+            }
+
+            {task.item.done &&
+              <AntDesign name="check" size={32} color="white" />
             }
           </View>
         )
@@ -57,8 +65,4 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginBottom: 16
   },
-
-  listItemDone: {
-    backgroundColor: "#FFDCCC"
-  }
 })
