@@ -4,24 +4,35 @@ import { Task } from "@/types";
 import Button from "./Button";
 
 export default function TaskList({
-  tasks
+  tasks,
+  setTasks
 }: {
-  tasks: Task[]
+  tasks: Task[];
+  setTasks: React.Dispatch<React.SetStateAction<Task[]>>
 }) {
   return (
     <FlatList
       style={styles.listContainer}
       data={tasks}
-      renderItem={(task) => (
-        <View style={styles.listItem}>
-          <View>
-            <Text>{task.item.title}</Text>
-            <Text>{task.item.subtitle}</Text>
-          </View>
+      renderItem={(task) => {
+        const itemStyle = task.item.done ? [styles.listItem, styles.listItemDone] : styles.listItem;
+        return (
+          <View style={itemStyle}>
+            <View>
+              <Text>{task.item.title}</Text>
+              <Text>{task.item.subtitle}</Text>
+            </View>
 
-          <Button>Check</Button>
-        </View>
-      )}
+            {!task.item.done &&
+              <Button
+                onPress={() => setTasks((tasks) => [...tasks.filter((taskFilter) => taskFilter.id !== task.item.id), {...task.item, done: true}])}
+              >
+                Check
+              </Button>
+            }
+          </View>
+        )
+      }}
       keyExtractor={item => item.id.toString()}
     />
   )
@@ -45,5 +56,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     marginBottom: 16
+  },
+
+  listItemDone: {
+    backgroundColor: "#FFDCCC"
   }
 })

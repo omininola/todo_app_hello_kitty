@@ -3,7 +3,6 @@ import Input from "./Input";
 import Button from "./Button";
 import { Task } from "@/types";
 import { useState } from "react";
-import Text from "./Text";
 
 export default function Form({
   setTasks
@@ -32,7 +31,10 @@ export default function Form({
       />
 
       <Button
-        onPress={() => setTasks((tasks) => ([...tasks, task]))}
+        onPress={() => {
+          setTasks((tasks) => ([...tasks, task]))
+          setTask((taks) => ({...task, id: taks.id + 1 }))
+        }}
       >
         Adicionar Tarefa
       </Button>
