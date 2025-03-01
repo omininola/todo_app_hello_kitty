@@ -1,15 +1,15 @@
 import { PropsWithChildren } from "react";
-import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
+import { Pressable, PressableProps, StyleSheet, Text } from "react-native";
 
 export default function Button({
   children,
-  onPress
-}: & PropsWithChildren & TouchableOpacityProps
+  ...props
+}: & PropsWithChildren & PressableProps
 ) {
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    <Pressable style={styles.button} {...props}>
       <Text style={styles.text}>{children}</Text>
-    </TouchableOpacity>
+    </Pressable>
   )
 }
 
