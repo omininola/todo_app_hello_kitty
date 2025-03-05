@@ -15,7 +15,7 @@ export default function Button({
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#FDB7EA',
+    backgroundColor: "hsl(319 100% 75%)",
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 8,
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 
   text: {
     fontSize: 28,
-    color: 'white',
-    fontWeight: '600'
+    color: "hsl(319 100% 95%)",
+    fontWeight: "600"
   }
 })

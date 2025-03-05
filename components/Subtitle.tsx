@@ -11,6 +11,6 @@ export default function Subtitle({
 const styles = StyleSheet.create({
   text: {
     fontSize: 24,
-    color: 'white',
+    color: "hsl(319 100% 70%)",
   }
 })
