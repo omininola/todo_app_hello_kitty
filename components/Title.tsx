@@ -11,7 +11,7 @@ export default function Title({
 const styles = StyleSheet.create({
   text: {
     fontSize: 32,
-    color: 'white',
-    fontWeight: '600'
+    color: "hsl(319 100% 60%)",
+    fontWeight: "600"
   }
 })

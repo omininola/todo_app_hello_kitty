@@ -6,16 +6,16 @@ export default function Input( props: TextInputProps ) {
 
 const styles = StyleSheet.create({
   input: {
-    color: 'white',
+    color: "hsl(319 100% 70%)",
     
     borderWidth: 4,
-    borderColor: '#FDB7EA',
+    borderColor: "hsl(319 100% 80%)",
     borderRadius: 12,
-    outlineColor: 'transparent',
+    outlineColor: "transparent",
 
     fontSize: 24,
     
-    width: '100%',
+    width: "100%",
     paddingVertical: 12,
     paddingHorizontal: 24,
   }

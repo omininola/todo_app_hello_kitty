@@ -36,7 +36,7 @@ export default function TaskList({
             }
 
             {task.item.done &&
-              <AntDesign name="check" size={32} color="white" />
+              <AntDesign name="check" size={32} color="hsl(319 100% 70%)" />
             }
           </View>
         )
@@ -49,7 +49,7 @@ export default function TaskList({
 const styles = StyleSheet.create({
   listContainer: {
     borderWidth: 4,
-    borderColor: "#FBF3B9",
+    borderColor: "hsl(319 100% 75%)",
     borderRadius: 12,
     padding: 16,
     width: "100%"
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
 
   listItem: {
     borderWidth: 4,
-    borderColor: "#FFDCCC",
+    borderColor: "hsl(319 100% 80%)",
     borderRadius: 12,
     padding: 16,
     alignItems: "center",
